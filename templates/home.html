@@ -1,0 +1,34 @@
+<!doctype html>
+{% extends 'base.html' %}
+
+    
+  {% block title %}Lista de livros{% endblock %}
+  
+  {% block content %}
+
+    <div class='container'>
+      <a class="btn btn-primary m-2" href='{% url 'cadastro' %}'>Cadastre-se</a>
+      <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">Classificacao</th>
+            <th scope="col">Titulo</th>
+            <th scope="col">Autor</th>
+            <th scope="col">Editora</th>
+          </tr>
+        </thead>
+        {% for object in object_list %}
+          <tr>
+            <th scope="row">{{ object.classificacao }}</th>
+            <td>{{ object.titulo }} </td>
+            <td>{{ object.autor }}</td>
+            <td>{{ object.editora }} - <a class='btn btn-primary' href='{% url 'update' pk=object.id %}'>Editar</a>
+                                       <a class='btn btn-warning' href='{% url 'detail' pk=object.id %}'>Visualizar</a>
+                                       <a class='btn btn-danger' href='{% url 'delete' pk=object.id %}'>Deletar</a></td>
+          </tr> 
+        {% endfor %} 
+        </tbody>
+      </table>
+    </div>
+  {% endblock %}
+   

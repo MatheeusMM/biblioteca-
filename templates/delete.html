@@ -1,0 +1,22 @@
+<!doctype html>
+{% extends 'base.html' %}
+
+
+    {% block title %}Biblioteca{% endblock %}
+
+  {% block content %}
+
+  <div class='container'>
+
+    <h1>Deletar</h1>
+
+    <p>tem certeza que deseja apagar? {{ object.titulo }}</p>
+
+  
+    <form action='.' method='post'>
+        {% csrf_token %}
+        <input type='submit' class='btn btn-danger' value='Sim, tenho certeza'>
+        <a class='btn btn-primary' href='{% url 'livro' %}'>Voltar</a>
+    </form>
+  </div>
+ {% endblock %}   

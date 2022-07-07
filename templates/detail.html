@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+
+  {% block title %}Detalhe{% endblock %}
+  
+  {% block content %}
+
+  <div class='container'>
+    <div class='row'>
+      <div class='col'>
+      </div>
+      <div class='col'>
+        <h3>titulo</h3>
+        {{ object.titulo }}
+        
+      <h3>classificacao</h3>
+        {{ object.classificacao }}
+        
+      <h3>editora</h3>
+        {{ object.editora }}
+        
+      <h3>categoria</h3>
+        {{ object.categoria }}
+      <br>
+      <a class="btn btn-primary m-2" href='{% url 'livro' %}'>Voltar</a> 
+    <div class='col'></div>
+      </div>
+      <div class='col'>
+      </div>
+    </div>
+    
+    
+  </div>
+  {% endblock %}
+
+
+
+
+
+   
